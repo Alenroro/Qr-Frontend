@@ -1,0 +1,33 @@
+
+button {
+  border: none;
+}
+
+.edit-button {
+  background-color: transparent !important;
+}
+
+.edit-icon{
+  height: 25px;
+  width: 25px;
+  color: #000000;
+}
+.edit-button :hover {
+  color: #54b4d3 !important;
+}
+
+.edit-form{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column    ;
+}
+
+.update-btn{
+  background-color: #54b4d3 !important;
+}
+
+.scrollable-select {
+  max-height: 150px; 
+  overflow-y: auto;  
+}
+

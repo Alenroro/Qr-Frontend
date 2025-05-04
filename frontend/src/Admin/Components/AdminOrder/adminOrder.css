@@ -1,0 +1,56 @@
+.adminOrder-page { 
+    height: fit-content; 
+    width: 100%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  } 
+   
+  .adminOrder-section { 
+    margin-top: 7%; 
+    height: 80vh; 
+    width: 85%; 
+    border: 1px solid black; 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+  } 
+   
+  .box { 
+    width: 48%; 
+    height: 95%; 
+    border: 1px solid black; 
+  } 
+  .menu-sec,
+  .combo-sec { 
+    height: fit-content; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+  } 
+  .menu-button,
+  .combo-button  { 
+    width: fit-content; 
+    height: fit-content; 
+    border: 1px solid black; 
+    padding: 5px; 
+  } 
+  .navBar{ 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    height: 50px; 
+  } 
+  .category-dropdown{ 
+    height: fit-content; 
+    width: 30%; 
+  }
+  .flex{
+    display: flex;
+    flex-wrap: wrap;
+  }

@@ -1,0 +1,72 @@
+.reg-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ede7e1;
+}
+
+.reg-box {
+  height: 450px;
+  width: 385px;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  background-color: #c4a99b;
+}
+.reg-box input {
+  width: 90%;
+  padding: 8px;
+  margin-top: 20px;
+  border: none;
+  border-bottom: 2px solid #ede7e1;
+  color: white;
+  outline: none;
+  background: none;
+  font-size: 16px;
+}
+.reg-box input:focus {
+  border-bottom-color: #4b281e;
+}
+.reg-box .reg-button {
+  width: 55%;
+  padding: 8px;
+  margin-top: 50px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  color:#fff;
+  background-color: #4b281e;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: rgb(255, 253, 253);
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.back-button{
+  width: 55%;
+  padding: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  color:#fff;
+  background-color: #4b281e;
+  cursor: pointer;
+}

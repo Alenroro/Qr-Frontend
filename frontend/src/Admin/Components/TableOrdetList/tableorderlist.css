@@ -1,0 +1,75 @@
+.tableorder-page {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tableorder-section {
+  margin-top: 7%;
+  height: 80vh;
+  width: 85%;
+  border: 1px solid black;
+}
+.container {
+  height: 80%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.cntr {
+  text-align: center;
+}
+
+.btn-sec {
+  width: 10px;
+  border-left: 20px solid rgb(31, 131, 47) !important;
+}
+
+.table,
+td,
+th {
+  border-bottom: none !important;
+  background-color: #d0d1d025 !important;
+}
+
+.table .scrollable-select {
+  border: none;
+  font-weight: bold;
+  background-color: transparent;
+}
+.table .scrollable-select:focus {
+  outline: none;
+}
+
+.scrollable-select option {
+  font-size: small;
+}
+
+.foodname {
+  font-variant: small-caps;
+  font-weight: bold;
+  width: 400px;
+}
+
+.option-served {
+  background-color: #198754;
+  color: white;
+}
+
+.option-not-served {
+  background-color: red;
+  color: white;
+}
+
+.option-partial {
+  background-color: yellow;
+  color: black;
+}
+
+.option-no-order {
+  background-color: white;
+  color: black;
+}

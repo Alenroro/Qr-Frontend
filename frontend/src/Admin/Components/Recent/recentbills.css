@@ -1,0 +1,49 @@
+.recent-page { 
+  height: fit-content; 
+  width: 100%; 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+} 
+ 
+.recent-section { 
+  margin-top: 7%; 
+  height: 80vh; 
+  width: 85%; 
+  border: 1px solid black; 
+} 
+.cntnts { 
+  height: 100%; 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+  padding: 20px 0px; 
+  overflow-y: scroll; 
+  scrollbar-width: none; 
+  scroll-behavior: smooth; 
+} 
+.bill-box { 
+  width: 90%; 
+  border: 1px solid black; 
+} 
+ 
+.detail-sec { 
+  height: 50px; 
+  width: 100%; 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+} 
+ 
+.bill-header { 
+  display: flex; 
+  justify-content: space-around; 
+} 
+.bills { 
+  width: 90%; 
+  text-align: center; 
+  margin: auto; 
+}

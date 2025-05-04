@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.cntr {
+  text-align: center;
+}
+
+.btn-sec {
+  width: 10px;
+  border-left: 20px solid green !important;
+}
+
+button,
+.btn {
+  border: none;
+}
+
+.del-button {
+  background-color: transparent !important;
+}
+::placeholder{
+  color: white;
+}
+.del-icon {
+  height: 25px;
+  width: 25px;
+  color: #000000;
+}
+
+.del-button :hover {
+  color: #f30930;
+}
+
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.update-btn {
+  background-color: #54b4d3 !important;
+}
+
+.table,
+td,
+th {
+  border-bottom: none !important;
+  background-color: #d0d1d125 !important;
+}
+
+.table .scrollable-select {
+  border: none;
+  font-weight: bold;
+  background-color: transparent;
+
+}
+.table .scrollable-select:focus {
+  outline: none;
+}
+
+.scrollable-select option{
+  font-size: small;
+}
+
+.foodname{
+  font-variant: small-caps;
+  font-weight: bold;
+  width: 400px;
+}
+

@@ -1,0 +1,65 @@
+.profile-page {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-section {
+  margin-top: 7%;
+  width: 85%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-box {
+  width: 60%;
+  margin: 5% 0%;
+  border: 1px solid black;
+  padding: 3% 0%;
+}
+.profile-box header {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.data-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clr {
+  width: 80%;
+  margin: auto;
+}
+
+section form {
+  width: 60%;
+  text-align: left;
+  font-size: large;
+  margin: 20px auto;
+}
+section input {
+  width: 80%;
+  margin: auto;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  background: none;
+  float: right;
+}
+section label {
+  width: 10%;
+}
+
+.edit-box {
+  width: 100%;
+}
+.edt-button {
+  float: right;
+  background-color: transparent;
+}
