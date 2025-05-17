@@ -17,7 +17,7 @@ const Profile = () => {
   const fetchData = useCallback(async () => {
     try {
       let response = await axios.get(
-        "https://qr-scanning-server.netlify.app/user/login"
+        "https://qr-backend-server.onrender.com/user/login"
       );
       const Datas = response.data;
       const successData = Datas.find((data) => data.email === emailData);
@@ -44,7 +44,7 @@ const Profile = () => {
 
   const handleClick = async (_id) => {
     try {
-      await axios.post("https://qr-scanning-server.netlify.app/user/edit", {
+      await axios.post("https://qr-backend-server.onrender.com/user/edit", {
         _id,
         ...updatedData,
       });

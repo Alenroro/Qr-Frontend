@@ -30,7 +30,7 @@ const Uploads = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "https://qr-scanning-server.netlify.app/categories/category"
+          "https://qr-backend-server.onrender.com/categories/category"
         );
 
         if (Array.isArray(response.data)) {
@@ -52,7 +52,7 @@ const Uploads = () => {
     const fetchBanners = async () => {
       try {
         const response = await axios.get(
-          "https://qr-scanning-server.netlify.app/banner/banners"
+          "https://qr-backend-server.onrender.com/banner/banners"
         );
         setBanners(response.data);
       } catch (error) {
@@ -62,7 +62,7 @@ const Uploads = () => {
     const fetchCombos = async () => {
       try {
         const response = await axios.get(
-          "https://qr-scanning-server.netlify.app/combos/combo"
+          "https://qr-backend-server.onrender.com/combos/combo"
         );
         setCombos(response.data);
       } catch (error) {
@@ -129,7 +129,7 @@ const Uploads = () => {
     }
     try {
       await axios.post(
-        "https://qr-scanning-server.netlify.app/combos/add",
+        "https://qr-backend-server.onrender.com/combos/add",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -144,7 +144,7 @@ const Uploads = () => {
       setComboItemType({});
       setError("");
       const updatedCombo = await axios.get(
-        "https://qr-scanning-server.netlify.app/combos/combo"
+        "https://qr-backend-server.onrender.com/combos/combo"
       );
       setCombos(updatedCombo.data);
     } catch (error) {
@@ -159,12 +159,12 @@ const Uploads = () => {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `https://qr-scanning-server.netlify.app/combos/${id}`
+        `https://qr-backend-server.onrender.com/combos/${id}`
       );
       alert(response.data.message);
       setCombos(combos.filter((combo) => combo._id !== id));
       const updatedItems = await axios.get(
-        "https://qr-scanning-server.netlify.app/combos/combo"
+        "https://qr-backend-server.onrender.com/combos/combo"
       );
       setCombos(updatedItems.data);
     } catch (error) {
@@ -198,7 +198,7 @@ const Uploads = () => {
 
     try {
       const response = await axios.post(
-        "https://qr-scanning-server.netlify.app/categories/upload",
+        "https://qr-backend-server.onrender.com/categories/upload",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -217,7 +217,7 @@ const Uploads = () => {
 
         // Refresh categories
         const categoryResponse = await axios.get(
-          "https://qr-scanning-server.netlify.app/categories/category"
+          "https://qr-backend-server.onrender.com/categories/category"
         );
         setCategories(categoryResponse.data);
       } else {
@@ -244,7 +244,7 @@ const Uploads = () => {
 
     try {
       const response = await axios.post(
-        "https://qr-scanning-server.netlify.app/files/add",
+        "https://qr-backend-server.onrender.com/files/add",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -275,7 +275,7 @@ const Uploads = () => {
 
     try {
       const response = await axios.post(
-        "https://qr-scanning-server.netlify.app/banner/add",
+        "https://qr-backend-server.onrender.com/banner/add",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -284,7 +284,7 @@ const Uploads = () => {
       setBannerImage(null);
 
       const updatedBanners = await axios.get(
-        "https://qr-scanning-server.netlify.app/banner/banners"
+        "https://qr-backend-server.onrender.com/banner/banners"
       );
       setBanners(updatedBanners.data);
     } catch (error) {
@@ -303,11 +303,11 @@ const Uploads = () => {
 
     try {
       await axios.delete(
-        `https://qr-scanning-server.netlify.app/categories/category/${categoryId}`
+        `https://qr-backend-server.onrender.com/categories/category/${categoryId}`
       );
       alert("Category deleted successfully!");
       const response = await axios.get(
-        "https://qr-scanning-server.netlify.app/categories/category"
+        "https://qr-backend-server.onrender.com/categories/category"
       );
       setCategories(response.data);
     } catch (error) {
@@ -329,12 +329,12 @@ const Uploads = () => {
 
     try {
       await axios.delete(
-        `https://qr-scanning-server.netlify.app/banner/banners/${fileId}`
+        `https://qr-backend-server.onrender.com/banner/banners/${fileId}`
       );
       alert("Banner deleted successfully!");
 
       const updatedBanners = await axios.get(
-        "https://qr-scanning-server.netlify.app/banner/banners"
+        "https://qr-backend-server.onrender.com/banner/banners"
       );
       setBanners(updatedBanners.data);
     } catch (error) {

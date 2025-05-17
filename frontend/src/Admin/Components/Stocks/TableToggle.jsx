@@ -19,7 +19,7 @@ const TableToggle = () => {
   const fetchData = useCallback(async () => {
     try {
       const response = await axios.get(
-        "https://qr-scanning-server.netlify.app/menu/stocks"
+        "https://qr-backend-server.onrender.com/menu/stocks"
       );
       setData(response.data);
     } catch (error) {
@@ -30,7 +30,7 @@ const TableToggle = () => {
   const fetchCategories = useCallback(async () => {
     try {
       const response = await axios.get(
-        "https://qr-scanning-server.netlify.app/categories/category"
+        "https://qr-backend-server.onrender.com/categories/category"
       );
 
       if (Array.isArray(response.data)) {
@@ -99,7 +99,7 @@ const TableToggle = () => {
 
   const handleDelete = async (_id) => {
     try {
-      await axios.post("https://qr-scanning-server.netlify.app/menu/delete", {
+      await axios.post("https://qr-backend-server.onrender.com/menu/delete", {
         _id,
       });
       setData(data.filter((item) => item._id !== _id));

@@ -36,7 +36,7 @@ const TableOrderList = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://qr-scanning-server.netlify.app/cart/items"
+        "https://qr-backend-server.onrender.com/cart/items"
       );
 
       if (Array.isArray(response.data)) {
@@ -98,7 +98,7 @@ const TableOrderList = () => {
     const date = new Date().toLocaleDateString();
 
     try {
-      await axios.post("https://qr-scanning-server.netlify.app/bills/paid", {
+      await axios.post("https://qr-backend-server.onrender.com/bills/paid", {
         tableNumber: parseInt(selectedTable, 10),
         items: filteredData.map((item) => ({
           ...item,

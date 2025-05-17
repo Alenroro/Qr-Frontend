@@ -53,7 +53,7 @@ const Register = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post("https://qr-scanning-server.netlify.app/user/", value);
+      await axios.post("https://qr-backend-server.onrender.com/user/", value);
       setValue({
         name: "",
         email: "",

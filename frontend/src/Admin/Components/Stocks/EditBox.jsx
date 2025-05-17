@@ -19,7 +19,7 @@ const EditBox = ({ args, item }) => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "https://qr-scanning-server.netlify.app/categories/category"
+          "https://qr-backend-server.onrender.com/categories/category"
         );
         setCategories(response.data);
       } catch (error) {
@@ -54,7 +54,7 @@ const EditBox = ({ args, item }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://qr-scanning-server.netlify.app/menu/edit",
+        "https://qr-backend-server.onrender.com/menu/edit",
         {
           ...formData,
           _id: item._id,

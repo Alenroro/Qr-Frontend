@@ -11,7 +11,7 @@ const KitchenOrders = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://qr-scanning-server.netlify.app/cart/items")
+      .get("https://qr-backend-server.onrender.com/cart/items")
       .then((response) => {
         // console.log(response.data);
         setCartItems(response.data || []);

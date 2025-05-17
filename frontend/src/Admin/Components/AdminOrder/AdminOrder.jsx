@@ -16,7 +16,7 @@ const AdminOrder = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://qr-scanning-server.netlify.app/menu/stocks"
+        "https://qr-backend-server.onrender.com/menu/stocks"
       );
       const dataWithAvailability = response.data.map((item) => ({
         ...item,
@@ -31,7 +31,7 @@ const AdminOrder = () => {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        "https://qr-scanning-server.netlify.app/categories/category"
+        "https://qr-backend-server.onrender.com/categories/category"
       );
 
       if (Array.isArray(response.data)) {
@@ -53,7 +53,7 @@ const AdminOrder = () => {
   const fetchCombos = async () => {
     try {
       const response = await axios.get(
-        "https://qr-scanning-server.netlify.app/combos/combo"
+        "https://qr-backend-server.onrender.com/combos/combo"
       );
       setComboData(response.data);
     } catch (error) {
@@ -212,7 +212,7 @@ const AdminOrder = () => {
     // console.log(orderData)
     try {
       const response = await axios.post(
-        "https://qr-scanning-server.netlify.appcart/cartitems",
+        "https://qr-backend-server.onrender.comcart/cartitems",
         orderData
       );
       if (response.status === 201) {

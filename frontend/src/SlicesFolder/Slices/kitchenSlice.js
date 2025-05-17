@@ -6,7 +6,7 @@ export const fetchCartItems = createAsyncThunk(
   "cart/fetchCartItems",
   async () => {
     const response = await axios.get(
-      "https://qr-scanning-server.netlify.app/cart/items"
+      "https://qr-backend-server.onrender.com/cart/items"
     );
     return response.data;
   }
@@ -17,7 +17,7 @@ export const updateCartItems = createAsyncThunk(
   async ({ id, updatedItems, updatedCombos }, { dispatch }) => {
     try {
       await axios.put(
-        ` https://qr-scanning-server.netlify.app/cart/cartitems/:${id}`,
+        ` https://qr-backend-server.onrender.com/cart/cartitems/:${id}`,
         {
           updatedItems,
           updatedCombos,
