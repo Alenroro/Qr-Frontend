@@ -18,7 +18,7 @@ const KitchenPage = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://qr-backend-application.onrender.com/cart/items")
+      .get("https://qr-scanning-server.netlify.app/cart/items")
       .then((response) => {
         setCartItems(response.data);
         setLoading(false);
@@ -65,7 +65,7 @@ const KitchenPage = () => {
       }
 
       if (foodItem) {
-        const url = `https://qr-backend-application.onrender.com/cart/cartitems/${cartItemId}/item/${foodItem._id}`;
+        const url = `https://qr-scanning-server.netlify.app/cart/cartitems/${cartItemId}/item/${foodItem._id}`;
         console.log("Sending request to update:", url);
         axios
           .put(url)
@@ -212,7 +212,7 @@ const KitchenPage = () => {
                                       {item.name} - {item.quantity}
                                       {index < foodItem.items.length - 1 &&
                                         ", "}
-                                        <br/>
+                                      <br />
                                     </span>
                                   ))}
                                 </h5>

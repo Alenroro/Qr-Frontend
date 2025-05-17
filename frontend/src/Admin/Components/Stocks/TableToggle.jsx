@@ -19,7 +19,7 @@ const TableToggle = () => {
   const fetchData = useCallback(async () => {
     try {
       const response = await axios.get(
-        "https://qr-backend-application.onrender.com/menu/stocks"
+        "https://qr-scanning-server.netlify.app/menu/stocks"
       );
       setData(response.data);
     } catch (error) {
@@ -30,7 +30,7 @@ const TableToggle = () => {
   const fetchCategories = useCallback(async () => {
     try {
       const response = await axios.get(
-        "https://qr-backend-application.onrender.com/categories/category"
+        "https://qr-scanning-server.netlify.app/categories/category"
       );
 
       if (Array.isArray(response.data)) {
@@ -99,10 +99,9 @@ const TableToggle = () => {
 
   const handleDelete = async (_id) => {
     try {
-      await axios.post(
-        "https://qr-backend-application.onrender.com/menu/delete",
-        { _id }
-      );
+      await axios.post("https://qr-scanning-server.netlify.app/menu/delete", {
+        _id,
+      });
       setData(data.filter((item) => item._id !== _id));
       alert("Item Removed");
     } catch (error) {
@@ -185,7 +184,10 @@ const TableToggle = () => {
                 <td className="cntr">{item.categoryName || "-"}</td>
                 <td className="cntr">{item._id}</td>
                 <td colSpan={2}>
-                  <button className="cntr" onClick={() => setSelectedItem(item)}>
+                  <button
+                    className="cntr"
+                    onClick={() => setSelectedItem(item)}
+                  >
                     <EditBox
                       item={selectedItem}
                       onClose={() => setSelectedItem(null)}

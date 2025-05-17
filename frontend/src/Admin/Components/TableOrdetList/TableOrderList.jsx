@@ -35,13 +35,15 @@ const TableOrderList = () => {
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://qr-backend-application.onrender.com/cart/items");
-  
+      const response = await axios.get(
+        "https://qr-scanning-server.netlify.app/cart/items"
+      );
+
       if (Array.isArray(response.data)) {
         setData(response.data);
         const tables = new Set(response.data.map((table) => table.tableNumber));
         setTablesWithData(tables);
-  
+
         let tableItems = [];
         if (selectedTable === "") {
           const allItems = response.data.flatMap((table) => table.items);
@@ -65,7 +67,6 @@ const TableOrderList = () => {
       setLoading(false);
     }
   }, [selectedTable]);
-  
 
   useEffect(() => {
     fetchData();
@@ -77,7 +78,7 @@ const TableOrderList = () => {
         console.warn("Skipping undefined or invalid item:", item);
         return acc;
       }
-  
+
       if (acc[item.name]) {
         acc[item.name].count += item.count || 0;
       } else {
@@ -87,7 +88,6 @@ const TableOrderList = () => {
     }, {});
     return Object.values(aggregated);
   };
-  
 
   const handleToggle = () => {
     setShowTable((prevShowTable) => !prevShowTable);
@@ -98,18 +98,15 @@ const TableOrderList = () => {
     const date = new Date().toLocaleDateString();
 
     try {
-      await axios.post(
-        "https://qr-backend-application.onrender.com/bills/paid",
-        {
-          tableNumber: parseInt(selectedTable, 10),
-          items: filteredData.map((item) => ({
-            ...item,
-            price: parseFloat(item.price),
-          })),
-          paidTime: time,
-          paidDate: date,
-        }
-      );
+      await axios.post("https://qr-scanning-server.netlify.app/bills/paid", {
+        tableNumber: parseInt(selectedTable, 10),
+        items: filteredData.map((item) => ({
+          ...item,
+          price: parseFloat(item.price),
+        })),
+        paidTime: time,
+        paidDate: date,
+      });
       alert("The Bill has been Paid");
       fetchData();
     } catch (error) {

@@ -28,7 +28,9 @@ const FoodItemCard = ({ item, onToggle }) => (
         alt={item.typeName}
       />
       <Card.Body>
-        <Card.Title>{item.typeName} - {item.stock}</Card.Title>
+        <Card.Title>
+          {item.typeName} - {item.stock}
+        </Card.Title>
         <label className="switch">
           <input
             type="checkbox"
@@ -92,12 +94,12 @@ const KitchenStocks = () => {
       setLoading(true);
       setError(null); // Reset previous errors
       const foodItemsResponse = await axios.get(
-        "https://qr-backend-application.onrender.com/menu/stocks"
+        "https://qr-scanning-server.netlify.app/menu/stocks"
       );
       const foodItemsData = foodItemsResponse.data;
       const foodItemsUrls = foodItemsData.map((item) => ({
         typeName: item.name,
-        typeImageUrl: `https://qr-backend-application.onrender.com/files/image/${item.imageId}`,
+        typeImageUrl: `https://qr-scanning-server.netlify.app/files/image/${item.imageId}`,
         typePrice: item.price,
         categoryName: item.categoryName,
         typeId: item._id,
@@ -109,12 +111,12 @@ const KitchenStocks = () => {
       setFoodItems(foodItemsUrls);
 
       const comboResponse = await axios.get(
-        "https://qr-backend-application.onrender.com/combos/combo"
+        "https://qr-scanning-server.netlify.app/combos/combo"
       );
       const comboData = comboResponse.data;
       const comboUrls = comboData.map((item) => ({
         comboName: item.comboName,
-        comboImageUrl: `https://qr-backend-application.onrender.com/combos/image/${item.comboImage}`,
+        comboImageUrl: `https://qr-scanning-server.netlify.app/combos/image/${item.comboImage}`,
         comboPrice: item.comboPrice,
         comboCategoryName: item.comboCategoryName,
         comboId: item._id,
@@ -142,8 +144,8 @@ const KitchenStocks = () => {
   const updateAvailability = async (id, newStatus, isCombo = false) => {
     try {
       const url = isCombo
-        ? `https://qr-backend-application.onrender.com/combos/stocks/${id}` // Combo URL
-        : `https://qr-backend-application.onrender.com/menu/stocks/${id}`; // Food Item URL
+        ? `https://qr-scanning-server.netlify.app/combos/stocks/${id}` // Combo URL
+        : `https://qr-scanning-server.netlify.app/menu/stocks/${id}`; // Food Item URL
 
       await axios.patch(url, { availability: newStatus });
 

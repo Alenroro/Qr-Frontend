@@ -11,7 +11,7 @@ const RecentBills = () => {
     const fetchBills = async () => {
       try {
         const response = await axios.get(
-          "https://qr-backend-application.onrender.com/bills/billitems"
+          "https://qr-scanning-server.netlify.app/bills/billitems"
         );
         setBills(response.data);
       } catch (error) {

@@ -19,7 +19,7 @@ const EditBox = ({ args, item }) => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "https://qr-backend-application.onrender.com/categories/category"
+          "https://qr-scanning-server.netlify.app/categories/category"
         );
         setCategories(response.data);
       } catch (error) {
@@ -54,13 +54,13 @@ const EditBox = ({ args, item }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://qr-backend-application.onrender.com/menu/edit",
+        "https://qr-scanning-server.netlify.app/menu/edit",
         {
           ...formData,
           _id: item._id,
         }
       );
-  
+
       if (response.status === 200) {
         alert(response.data.message);
         toggle();
@@ -68,11 +68,13 @@ const EditBox = ({ args, item }) => {
         alert("SORRY, Failed To Update Item");
       }
     } catch (error) {
-      console.error("Error:", error.response ? error.response.data : error.message);
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
       alert("An error occurred");
     }
   };
-  
 
   return (
     <div>

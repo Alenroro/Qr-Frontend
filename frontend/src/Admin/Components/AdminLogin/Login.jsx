@@ -52,7 +52,7 @@ const Login = () => {
 
     try {
       let response = await axios.get(
-        "https://qr-backend-application.onrender.com/user/login"
+        "https://qr-scanning-server.netlify.app/user/login"
       );
       const login = response.data;
 

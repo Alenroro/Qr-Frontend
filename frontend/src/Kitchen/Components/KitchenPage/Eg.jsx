@@ -11,14 +11,14 @@ const KitchenOrders = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://qr-backend-application.onrender.com/cart/items")
+      .get("https://qr-scanning-server.netlify.app/cart/items")
       .then((response) => {
         // console.log(response.data);
         setCartItems(response.data || []);
         setLoading(false);
       })
       .catch((err) => {
-        // console.error(err); 
+        // console.error(err);
         setError(err.message);
         setLoading(false);
       });
@@ -26,7 +26,7 @@ const KitchenOrders = () => {
 
   const handleServed = (itemId, isCombo = false) => {
     // Implement your served status update logic here
-    console.log(`Marking ${isCombo ? 'combo' : 'item'} ${itemId} as served`);
+    console.log(`Marking ${isCombo ? "combo" : "item"} ${itemId} as served`);
   };
 
   if (loading) return <div className="text-center my-4">Loading...</div>;
@@ -44,7 +44,7 @@ const KitchenOrders = () => {
               <div className="header">
                 <span>Table Number - {order.tableNumber}</span>
               </div>
-              
+
               {/* Individual Items Section */}
               <div className="food-sec">
                 <h4>Food Items :</h4>
@@ -59,9 +59,7 @@ const KitchenOrders = () => {
                       </span> */}
                       <span>
                         <strong>Count:</strong> {item.count}
-                        <div className="count">
-                          
-                        </div>
+                        <div className="count"></div>
                       </span>
                       <br />
                       {/* <span>
@@ -73,11 +71,13 @@ const KitchenOrders = () => {
                       <span>
                         <strong>Status:</strong> {item.status}
                       </span>
-                      <button 
+                      <button
                         onClick={() => handleServed(item._id)}
                         disabled={item.status === "Served"}
                       >
-                        {item.status === "Served" ? "Already Served" : "Mark as Served"}
+                        {item.status === "Served"
+                          ? "Already Served"
+                          : "Mark as Served"}
                       </button>
                     </li>
                   ))}
@@ -87,7 +87,7 @@ const KitchenOrders = () => {
               {/* Combos Section */}
               <div className="combos-sec">
                 <h4>Combos :</h4>
-                <ul  className="combo-items-box">
+                <ul className="combo-items-box">
                   {(order.combos || []).map((combo, comboIndex) => (
                     <li key={comboIndex} className="combo-detail">
                       <span>
@@ -97,7 +97,7 @@ const KitchenOrders = () => {
                         <strong>Type:</strong> {combo.type}
                       </span> */}
                       <span>
-                        <strong>Count:</strong> {combo.count}  
+                        <strong>Count:</strong> {combo.count}
                       </span>
                       {/* <span>
                         <strong>Price:</strong> ₹{combo.price}
@@ -108,21 +108,25 @@ const KitchenOrders = () => {
                       <span>
                         {/* <strong>Items:</strong> */}
                         <ul className="combo-items">
-                          {(combo.items || []).map((comboItem, comboItemIndex) => (
-                            <li key={comboItemIndex}>
-                              {comboItem.name} - {comboItem.quantity} 
-                            </li>
-                          ))}
+                          {(combo.items || []).map(
+                            (comboItem, comboItemIndex) => (
+                              <li key={comboItemIndex}>
+                                {comboItem.name} - {comboItem.quantity}
+                              </li>
+                            )
+                          )}
                         </ul>
                       </span>
                       <span>
                         <strong>Status:</strong> {combo.status}
                       </span>
-                      <button 
+                      <button
                         onClick={() => handleServed(combo._id, true)}
                         disabled={combo.status === "Served"}
                       >
-                        {combo.status === "Served" ? "Already Served" : "Mark as Served"}
+                        {combo.status === "Served"
+                          ? "Already Served"
+                          : "Mark as Served"}
                       </button>
                     </li>
                   ))}

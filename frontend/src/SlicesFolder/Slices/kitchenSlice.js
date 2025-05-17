@@ -6,18 +6,18 @@ export const fetchCartItems = createAsyncThunk(
   "cart/fetchCartItems",
   async () => {
     const response = await axios.get(
-      "https://qr-backend-application.onrender.com/cart/items"
+      "https://qr-scanning-server.netlify.app/cart/items"
     );
     return response.data;
   }
 );
 
 export const updateCartItems = createAsyncThunk(
-  "cart/updateCartItems",       
+  "cart/updateCartItems",
   async ({ id, updatedItems, updatedCombos }, { dispatch }) => {
     try {
       await axios.put(
-        ` https://qr-backend-application.onrender.com/cart/cartitems/:${id}`,
+        ` https://qr-scanning-server.netlify.app/cart/cartitems/:${id}`,
         {
           updatedItems,
           updatedCombos,
